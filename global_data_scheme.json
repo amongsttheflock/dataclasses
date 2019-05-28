@@ -1,0 +1,70 @@
+{
+  "classes": [
+    {
+      "class": "city",
+      "attributes": [
+        {"country": "string"},
+        {"voivodeship": "string"},
+        {"area": "area_type"},
+        {"population": "int"},
+        {"population_density": "density_type"},
+        {
+          "recreations": "recreations_type",
+          "optional": true
+        },
+        {
+          "traffic_details": "traffic_type",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "class": "recreations_type",
+      "attributes": [
+        {"parks": "percentage_type"},
+        {"woods": "percentage_type"}
+      ]
+    },
+    {
+      "class": "traffic_details",
+      "attributes": [
+        {"traffic_peak_time": "time_span_type"},
+        {"average_speed": "speed_type"}
+      ]
+    },
+    {
+      "class": "time_span_type",
+      "attributes": [
+        {"start": "time_type"},
+        {"time": "time_type"}
+      ]
+    }
+  ],
+  "scalars": [
+    {
+      "scalar": "area_type",
+      "value_type": "int",
+      "unit": "km^2"
+    },
+    {
+      "scalar": "density_type",
+      "value_type": "int",
+      "unit": "person/km^2"
+    },
+    {
+      "scalar": "percentage_type",
+      "value_type": "int",
+      "unit": "%"
+    },
+    {
+      "scalar": "speed_type",
+      "value_type": "float",
+      "unit": "km/h"
+    },
+    {
+      "scalar": "time_type",
+      "value_type": "string",
+      "format": "^((\\d\\d)|\\d):\\d\\d$"
+    }
+  ]
+}

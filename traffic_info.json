@@ -1,0 +1,104 @@
+{
+  "cities": [
+    {
+      "city": "Białystok",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "8:00",
+          "end": "11:00"
+        },
+        "average_speed": 37
+      }
+    },
+    {
+      "city": "Bydgoszcz",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "18:00",
+          "end": "15:00"
+        },
+        "average_speed": 35
+      }
+    },
+    {
+      "city": "Gdańsk",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "7:00",
+          "end": "9:00"
+        },
+        "average_speed": 38
+      }
+    },
+    {
+      "city": "Katowice",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "7:45",
+          "end": "9:15"
+        },
+        "average_speed": 29
+      }
+    },
+    {
+      "city": "Kraków",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "7:45",
+          "end": "9:15"
+        },
+        "average_speed": 30
+      }
+    },
+    {
+      "city": "łódź",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "16:00",
+          "end": "18:00"
+        },
+        "average_speed": 36
+      }
+    },
+    {
+      "city": "Olsztyn",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "16:00",
+          "end": "18:00"
+        },
+        "average_speed": 30
+      }
+    },
+    {
+      "city": "Poznań",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "7:45",
+          "end": "9:15"
+        },
+        "average_speed": 31
+      }
+    },
+    {
+      "city": "Warszawa",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "7:00",
+          "end": "9:00"
+        },
+        "average_speed": 34
+      }
+    },
+    {
+      "city": "Wrocław",
+      "traffic_details": {
+        "traffic_peak_time": {
+          "start": "7:30",
+          "end": "9:00"
+        },
+        "average_speed": 29
+      }
+    }
+  ]
+}

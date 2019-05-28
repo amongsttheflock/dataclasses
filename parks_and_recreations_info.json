@@ -1,0 +1,108 @@
+{
+  "cities": [
+    {
+      "city": "Białystok",
+      "recreations": {
+        "parks": 5,
+        "woods": 18
+      }
+    },
+    {
+      "city": "Białystok",
+      "recreations": {
+        "parks": 5,
+        "woods": 18
+      }
+    },
+    {
+      "city": "Białystok",
+      "recreations": {
+        "parks": 5,
+        "woods": 18
+      }
+    },
+    {
+      "city": "Bydgoszcz",
+      "recreations": {
+        "parks": 7,
+        "woods": 27
+      }
+    },
+    {
+      "city": "Gdańsk",
+      "recreations": {
+        "parks": 3,
+        "woods": 17
+      }
+    },
+    {
+      "city": "Katowice",
+      "recreations": {
+        "parks": 6,
+        "woods": 40
+      }
+    },
+    {
+      "city": "Kielce",
+      "recreations": {
+        "parks": 3,
+        "woods": 21
+      }
+    },
+    {
+      "city": "Kraków",
+      "recreations": {
+        "parks": 5,
+        "woods": 4
+      }
+    },
+    {
+      "city": "lublin",
+      "recreations": {
+        "parks": 6,
+        "woods": 11.0
+      }
+    },
+    {
+      "city": "Łódź",
+      "recreations": {
+        "lasy": 9
+      }
+    },
+    {
+      "city": "Olsztyn",
+      "recreations": {
+        "parks": 3,
+        "woods": 21
+      }
+    },
+    {
+      "city": "Poznań",
+      "recreations": {
+        "parks": 4,
+        "woods": 14
+      }
+    },
+    {
+      "city": "Szczecin",
+      "recreations": {
+        "parks": 2,
+        "woods": 16
+      }
+    },
+    {
+      "city": "Warszawa",
+      "recreations": {
+        "parks": 6,
+        "woods": 14
+      }
+    },
+    {
+      "city": "wrocław",
+      "recreations": {
+        "parks": 5,
+        "woods": 7
+      }
+    }
+  ]
+}
