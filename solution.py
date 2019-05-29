@@ -1,19 +1,21 @@
 import datetime
 import json
 import re
-from dataclasses import field
+from dataclasses import field #sure its a good import? maybe import from pydantic?
 
 from pydantic import ValidationError
 from pydantic.dataclasses import dataclass
 
 NO_DATA = 'no valid data found'
 
+# as for printing: https://beautifultable.readthedocs.io/en/latest/quickstart.html
 
 @dataclass
 class ParksAndRecreations:
     city_name: str = field(repr=False)
     parks: int = field(metadata={'units': '%'})
     woods: int = field(metadata={'units': '%'})
+    #  jak wyświetlać w reprze unitsy z metadata?
 
 
 @dataclass
@@ -76,13 +78,13 @@ def get_cities(data):
     for city in data:
         try:
             cities.append(City(city_name=city.get('city', NO_DATA),
-                               country=,
-                               voivodeship=,
-                               area=,
-                               population=,
-                               population_density=,
-                               recreations= None, #tu jakiś łatwy dostęp, może recreations trzymać w słowniku a nie w liście i dostać się po kluczu,
-                               traffic_details= None # komentarze jak wyżej))
+                               country=city.get('country', NO_DATA),
+                               voivodeship=city.get('voivodeship', NO_DATA),
+                               area=city.get('area', NO_DATA),
+                               population=city.get('population', NO_DATA),
+                               population_density=city.get('population_density', NO_DATA),
+                               recreations=None, #tu jakiś łatwy dostęp, może recreations trzymać w słowniku a nie w liście i dostać się po kluczu,
+                               traffic_details=None))  # komentarze jak wyżej
         except ValidationError as e:
             print(f"Spotted data corrpution: {e}")
     return cities
@@ -119,4 +121,14 @@ def get_traffic_info(data):
             print(f"Spotted data corrpution: {e}")
     return traffic_info
 
+
+def _validate_time(time):
+    if re.match("^((\\d\\d)|\\d):\\d\\d$", time):
+        try:
+            hour, minutes = time.split(":")
+            datetime.time(int(hour), int(minutes))
+        except ValueError:
+            time = NO_DATA
+    else:
+        time = NO_DATA
 
