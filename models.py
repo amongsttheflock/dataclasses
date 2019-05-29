@@ -5,7 +5,8 @@ from dataclasses import field
 from nptime import nptime
 from pydantic.dataclasses import dataclass
 
-from solution.flow import NO_DATA
+
+NO_DATA = 'no valid data found'
 
 
 @dataclass
