@@ -4,17 +4,14 @@ from collections import defaultdict
 from beautifultable import BeautifulTable
 from pydantic import ValidationError
 
-from solution.classes import (City, ParksAndRecreations, TrafficPeakTime,
-                              Traffic)
-
-
-NO_DATA = 'no valid data found'
+from models import NO_DATA, City, ParksAndRecreations, Traffic, \
+    TrafficPeakTime
 
 
 def get_cities(data, traffic_objects, parks_and_recreations_objects):
     cities = []
     for city in data:
-        city_name = city.get('city', NO_DATA)
+        city_name = city.get('city', NO_DATA).capitalize()
 
         try:
             cities.append(City(
@@ -27,7 +24,7 @@ def get_cities(data, traffic_objects, parks_and_recreations_objects):
                 recreations=parks_and_recreations_objects.get(city_name, NO_DATA),
                 traffic_details=traffic_objects.get(city_name, NO_DATA)))
         except ValidationError as e:
-            print(f"[{city_name}]Spotted data corrpution: {e}")
+            print(f"[{city_name}] Spotted data corrpution: {e}")
 
     return cities
 
@@ -35,7 +32,8 @@ def get_cities(data, traffic_objects, parks_and_recreations_objects):
 def get_parks_and_recreations(data):
     parks_and_recreations = defaultdict(ParksAndRecreations)
     for city in data:
-        city_name = city.get('city', NO_DATA)
+        city_name = city.get('city', NO_DATA).capitalize()
+
         try:
             parks_and_recreations[city_name] = ParksAndRecreations(
                 city_name=city_name,
@@ -43,13 +41,14 @@ def get_parks_and_recreations(data):
                 woods=city.get('recreations', NO_DATA).get('woods', NO_DATA))
         except ValidationError as e:
             print(f"[{city_name}]Spotted data corrpution: {e}")
+
     return parks_and_recreations
 
 
 def get_traffic(data):
     traffic_info = defaultdict(Traffic)
     for city in data:
-        city_name = city.get('city', NO_DATA)
+        city_name = city.get('city', NO_DATA).capitalize()
 
         try:
             traffic_peak_time_data = city.get('traffic_details', NO_DATA).get(
@@ -77,7 +76,7 @@ def get_data_from_json(filepath):
 
 
 def show_data(data):
-    table = BeautifulTable()
+    table = BeautifulTable(max_width=200)
     table.column_headers = [name for name in City.__annotations__]
 
     for city in data:
