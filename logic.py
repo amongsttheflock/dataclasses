@@ -70,9 +70,9 @@ def get_traffic(data):
 
 
 def get_data_from_json(filepath):
-    with open(f'{filepath}') as f:
-        data = json.load(f).get('cities')
-    return data
+    with open(filepath, encoding='utf-8') as f:
+        data = json.load(f)
+    return data.get('cities')
 
 
 def show_data(data):
@@ -85,7 +85,7 @@ def show_data(data):
                city.traffic_details]
         table.append_row(row)
 
-    table.set_style(BeautifulTable.STYLE_BOX_ROUNDED)
+    table.set_style(BeautifulTable.STYLE_DEFAULT)
     print(table)
 
 
