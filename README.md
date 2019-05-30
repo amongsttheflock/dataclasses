@@ -1,7 +1,8 @@
 **SOLUTION:**
 Run logic.py with python 3.7 and packages installed from requirements.txt
 
-
+Task was:
+'''
 Having a data scheme (global_data_scheme):
 1. Combine data from 3 sources:
     a. cities.json
@@ -24,3 +25,4 @@ Having a data scheme (global_data_scheme):
       * gt - greater than
       * in - within a <min, max> bounds
     c. string types must support a full regular expression match
+'''
