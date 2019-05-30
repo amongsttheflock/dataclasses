@@ -1,3 +1,7 @@
+**SOLUTION:**
+Run logic.py with python 3.7 and packages installed from requirements.txt
+
+
 Having a data scheme (global_data_scheme):
 1. Combine data from 3 sources:
     a. cities.json
